@@ -1,0 +1,113 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+
+public partial class MasterPage : System.Web.UI.MasterPage
+{
+
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        String Str = "";
+        bool LI = true;
+        var table = new DataTable();
+        table.Columns.Add("ParentMenuCaption", typeof(string));
+        table.Columns.Add("ChildMenuCaption", typeof(string));
+        table.Columns.Add("ChildMenuLInk", typeof(string));
+
+        table.Rows.Add("Dashboard", "Dashboard", "Dashboard.aspx");
+        //table.Rows.Add("Dashboard", "Dashboard 1", "Dashboard.aspx"); 
+        //table.Rows.Add("Dashboard", "Dashboard 2", "Dashboard.aspx");
+
+        table.Rows.Add("Sell", "New Sell", "Sell.aspx");
+        table.Rows.Add("Sell", "Manage", "SellManage.aspx");
+        table.Rows.Add("Sell", "Refund", "SellRefund.aspx");
+
+        table.Rows.Add("Report", "Report1", "Report1.aspx");
+        table.Rows.Add("Report", "Report2", "Report2.aspx");
+        table.Rows.Add("Logout", "Logout", "Logout.aspx");
+        table.Rows.Add("Sell", "New Sell", "Sell.aspx");
+        table.Rows.Add("Sell", "Manage", "SellManage.aspx");
+        table.Rows.Add("Sell", "Refund", "SellRefund.aspx");
+
+
+        table.Rows.Add("Logout", "Logout 1", "Logout.aspx");
+
+
+
+        String OldParentMenu = "";
+
+        foreach (DataRow row in table.Rows)
+        {
+            //Console.WriteLine(row["Id"] + ",  " + row["Name"] + ",  " + row["Email"]);
+
+            String CurrentParentMenu = row["ParentMenuCaption"].ToString();
+            String CurrentChildMenu = row["ChildMenuCaption"].ToString();
+            String CurrentLink = row["ChildMenuLInk"].ToString();
+
+            if (OldParentMenu == CurrentParentMenu)
+            {
+                Str = Str + "<li>" + "<a href=" + CurrentLink + ">" + CurrentChildMenu + "</a></li>";
+                LI = false;
+            }
+            else
+            {
+                if (CurrentParentMenu == CurrentChildMenu)
+                {
+                    if (LI)
+                        //Str = Str + "<li>" + "<a href=" + CurrentLink + ">" + CurrentChildMenu + "</a></li>";
+                        Str = Str + "<li class=''><a href='" + CurrentLink + "'><span class='pcoded-micon'><i class='feather icon-home'></i></span><span class='pcoded-mtext'>" + CurrentChildMenu + "</span></a></li>";
+                    else
+                        //Str = Str + "</ul></li><li>" + "<a href=" + CurrentLink + ">" + CurrentChildMenu + "</a></li>";
+                        Str = Str + "</ul></li><li class=''><a href='" + CurrentLink + "'><span class='pcoded-micon'><i class='feather icon-home'></i></span><span class='pcoded-mtext'>" + CurrentChildMenu + "</span></a></li>";
+                    LI = true;
+                }
+                else
+                {
+                    if (LI)
+                        Str = Str + "<li>" + CurrentParentMenu + "<ul><li>" + "<a href=" + CurrentLink + ">" + CurrentChildMenu + "</a></li>";
+                        //Str = Str + htmlTag(CurrentParentMenu, CurrentLink, CurrentChildMenu);
+                    else
+                        Str = Str + "</ul></li><li>" + CurrentParentMenu + "<ul><li>" + "<a href=" + CurrentLink + ">" + CurrentChildMenu + "</a></li>";
+                        //Str = Str + "</ul></li>" + htmlTag(CurrentParentMenu, CurrentLink, CurrentChildMenu);
+                }
+            }
+
+            //Str = Str + row["ParentMenuCaption"].ToString() + row["ChildMenuCaption"].ToString() + row["ChildMenuLInk"].ToString();
+            //Str = Str + "\n" + ParentMenu + ChildMenu + Link;
+
+
+            OldParentMenu = CurrentParentMenu;
+
+        }
+
+        ltrlMenu.Text = "<ul>" + Str + "</ul>";
+
+        //Label2.Text = Str;
+
+        //TextBox1.Text = Str;
+    }
+
+    protected String htmlTag(String CurrentParentMenu, String CurrentLink, String CurrentChildMenu)
+    {
+        return @"
+<li class=""pcoded-hasmenu"">
+<a href=""#"">
+<span class=""pcoded-micon""><i class=""feather icon-grid""></i></span>
+<span class=""pcoded-mtext"">" + CurrentParentMenu + @"</span>
+</a>
+<ul class=""pcoded-submenu"">
+   
+
+
+<li class=""#"">
+<a href=" + CurrentLink + @">
+<span class=""pcoded-mtext"">" + CurrentChildMenu + @"</span>
+</a>
+</li>";
+    }
+}

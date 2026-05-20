@@ -1,0 +1,39 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" %>
+
+<script runat="server">
+
+</script>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <table>
+        <tr>
+            <td>
+                fghdfgh
+            </td>
+            <td>
+                dfghdfgh
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                4523
+            </td>
+            <td>
+                retyrety
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+</asp:Content>

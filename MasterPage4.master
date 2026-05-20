@@ -1,0 +1,899 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage4.master.cs"
+    Inherits="MasterPage4" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Mohammadi Pharma : Sell</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="This Parking Management System Developed by Mayuri K. Freelancer in india">
+    <meta name="keywords" content="Mayuri K. freelancer">
+    <meta name="author" content="Mayuri K.">
+    <link rel="icon" href="uploadImage/Logo/logo1.png" type="image/x-icon">
+    <link href="files/assets/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="files/bower_components/bootstrap/css/bootstrap.min.css">
+    <link href="Asset/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+    <link href="Asset/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <%--
+    <link rel="stylesheet" type="text/css" href="files/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="files/assets/pages/data-table/css/buttons.dataTables.min.css">
+    --%>
+    <link rel="stylesheet" type="text/css" href="files/assets/icon/icofont/css/icofont.css">
+    <link rel="stylesheet" type="text/css" href="files/assets/icon/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="files/assets/icon/feather/css/feather.css">
+    <link rel="stylesheet" type="text/css" href="files/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="files/assets/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="popup_style.css">
+    <link href="select2.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        #Button1
+        {
+            height: 28px;
+            padding: 2px;
+        }
+        
+        .enterastab
+        {
+        }
+        /*input[type=text],input[type=button],input[type=submit]*/
+        input
+        {
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px; /*
+            border: 1px solid #2d9fd9;
+            color: #a0d18c;
+            width: 250px;
+            height: 30px;
+            padding-left: 10px;
+        */
+        }
+        
+        input[type=text]:focus
+        {
+            outline: none;
+            border: 1px solid #a0d18c;
+            color: #2d9fd9;
+        }
+    </style>
+    <style type="text/css">
+        .cart th td
+        {
+            padding: 5px;
+        }
+        .table-condensed tr th
+        {
+            border: 0px solid #6e7bd9;
+            color: white;
+            background-color: #6e7bd9;
+        }
+        
+        .table-condensed, .table-condensed tr td
+        {
+            border: 0px solid #000;
+        }
+        
+        tr:nth-child(even)
+        {
+            background: #f8f7ff;
+        }
+        
+        tr:nth-child(odd)
+        {
+            background: #fff;
+        }
+    </style>
+    <style type="text/css">
+        /* 
+        .btn
+        {
+            padding: 0px;
+        }
+       
+        .form-group 
+        {
+             padding:0px;
+        }
+        .row 
+        {
+             padding:0px;
+        }
+        label
+        {
+             padding:0px;
+        }
+        */
+        
+        input[type=text]
+        {
+            padding: 2px;
+        }
+        
+        
+        /*input[type=text],input[type=button],input[type=submit]*/
+        .form-control
+        {
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px; /*
+            border: 1px solid #2d9fd9;
+            color: #a0d18c;
+            width: 250px;
+            height: 30px;
+            padding-left: 10px;
+        */
+        }
+        
+        input[type=text]:focus
+        {
+            outline: none;
+            border: 1px solid #a0d18c;
+            color: #2d9fd9;
+        }
+    </style>
+    <style type="text/css">
+        table.cart th
+        {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+    <style type="text/css">
+        table.roundedCorners
+        {
+            border: 1px solid DarkOrange;
+            border-radius: 13px;
+            border-spacing: 0;
+        }
+        table.roundedCorners td, table.roundedCorners th
+        {
+            border-bottom: 1px solid DarkOrange;
+            padding: 10px;
+        }
+        table.roundedCorners tr:last-child > td
+        {
+            border-bottom: none;
+        }
+    </style>
+    <style type="text/css">
+        .gv
+        {
+            font-family: Arial;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+        .gv th
+        {
+            background-color: #5D7B9D;
+            font-weight: bold;
+            color: #fff;
+            padding: 2px 10px;
+        }
+        .gv td
+        {
+            padding: 2px 10px;
+        }
+        
+        
+        .delete
+        {
+            margin: 2px 10px;
+            padding: 2px 20px;
+            background-color: Red;
+            border-radius: 10px;
+            border: solid 1px #000;
+            cursor: pointer;
+            color: #fff;
+        }
+        
+        
+        .update
+        {
+            margin: 2px 10px;
+            padding: 2px 20px;
+            background-color: Green;
+            border-radius: 10px;
+            border: solid 1px #000;
+            cursor: pointer;
+            color: #fff;
+        }
+        /*
+        input[type="button"]
+        {
+            margin: 2px 10px;
+            padding: 2px 20px;
+            background-color: #5D7B9D;
+            border-radius: 10px;
+            border: solid 1px #000;
+            cursor: pointer;
+            color: #fff;
+        }
+        input[type="submit"]
+        {
+            margin: 2px 10px;
+            padding: 2px 20px;
+            background-color: #5D7B9D;
+            border-radius: 10px;
+            border: solid 1px #000;
+            cursor: pointer;
+            color: #fff;
+        }
+        input[type="submit"]:hover
+        {
+            background-color: orange;
+        }
+        */
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div> 
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <script type="text/javascript" src="files/bower_components/jquery/js/jquery.min.js"></script>
+    <script type="text/javascript" src="files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="Asset/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Asset/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="files/assets/js/pcoded.min.js"></script>
+    <script type="text/javascript" src="files/assets/js/vartical-layout.min.js"></script>
+    <script type="text/javascript" src="files/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="files/assets/js/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="files/assets/js/script.min.js"></script>
+    <script type="text/javascript" src="files/assets/js/script.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
+    <script src="select2.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $('.delete').on('click', function () {
+                return confirm('Are you sure?');
+            });
+        });
+
+
+
+
+
+        $(function () {
+            $('.select2').select2();
+        });
+
+
+
+        $(document).ready(function () {
+
+
+            //$("#txtInvoiceNO").val(100);
+
+            //alert('Sell Page');
+
+            var tab_intdex = document.getElementById('HiddenField1').value;
+            $("#myTab li:eq(" + tab_intdex + ") a").tab('show');
+
+            /*
+            $("#btnSubmit2").click(function () {
+
+            var v = $("#Text1").val();
+            alert(v);
+            $("#myTab li:eq(" + v + ") a").tab('show');
+            });
+            */
+
+            $("#tabs").tabs();
+
+
+            //$("#txtDOB").datepicker();
+
+
+            $("input").keyup(function () {
+
+                alert('tt');
+                $('#txtTotalPrice').val($('#txtQuantity').val() * $('#txtUnitPrice').val());
+            });
+
+        });
+
+        $(document).ready(function () {
+
+            //alert('tt');
+            //$('#example1').DataTable();
+
+
+
+
+            $("#Button1").click(function () {
+                //$('#txtInvoiceNO').val(100);
+                getInvoiceNO();
+                //var v = 1111;
+                //alert(v);
+
+                //$("#ContentPlaceHolder1_txtInvoiceNO").val(v);
+
+
+            });
+
+
+            /////////AJAX Call///////////////////////////////
+            $("#btnGetContractCode").click(function (e) {
+                getInvoiceNO();
+                //alert('ccccccc');
+            })
+            function getInvoiceNO() {
+                //var loc = window.location.href;
+                //loc = (loc.substr(loc.length - 1, 1) == "/") ? loc + "AddSubPer.aspx" : loc;
+                $.ajax({
+                    type: "POST",
+                    //url: loc + "/CheckUserName",
+                    //url: loc + "/AAA",
+                    url: "Sell.aspx/getInvoiceNO",
+                    data: JSON.stringify({ inv_type: 'I' }),
+                    //data: '{"item_Short_Name":"' + item_Short_Name + '"}',
+                    //data: "{}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (msg) {
+                        if (msg.d) {
+                            //alert(msg.d);
+                            $("#ContentPlaceHolder1_txtInvoiceNO").val(msg.d);
+                            //$("#txtFIContractCode").attr('disabled', true);
+                            //$("#ddlCType").focus();
+                            //alert($("#txtInvoiceNO").val());
+                        }
+                        else
+                            alert(val(msg.d))
+                    },
+                    error: function (request, status, error) {
+                        alert(request.responseText);
+                        //alert(request.status);
+                    }
+                });
+            }
+
+
+            $("#ContentPlaceHolder1_txtQuantity").keyup(function () {
+
+                var tot_price = $('#ContentPlaceHolder1_txtQuantity').val() * $('#ContentPlaceHolder1_txtUnitPrice').val();
+                $('#ContentPlaceHolder1_txtTotalPrice').val(tot_price.toFixed(0));
+                //$('#txtNetAmount').val($('#txtTotalPrice').val() - $('#txtDiscount').val());
+
+                $("#ContentPlaceHolder1_ddlDiscountCode").val("0");
+                $('#ContentPlaceHolder1_ddlDiscountCode').select2().trigger('change');
+            });
+
+            $("#txtDiscount").keyup(function () {
+                $('#txtNetAmount').val($('#txtTotalPrice').val() - $('#txtDiscount').val());
+            });
+
+            $("#txtTotalDiscount").keyup(function () {
+                $('#txtNetTotal').val($('#txtInvoiceAmount').val() - $('#txtTotalDiscount').val());
+            });
+
+            $("#txtPaidAmount").keyup(function () {
+                $('#txtChange').val($('#txtPaidAmount').val() - $('#txtNetTotal').val());
+
+                //alert($('#txtNetAmount').val());
+            });
+
+
+
+            //$("#txtCashAmount").keyup(function () {
+            $(".Payment").keyup(function () {
+
+                var paidamount = parseFloat($('#txtCashAmount').val()) + parseFloat($('#txtMFSAmount').val()) + parseFloat($('#txtCardAmount').val());
+                //$('#txtPaidAmount').val(parseFloat($('#txtCashAmount').val()) + parseFloat($('#txtMFSAmount').val()) + parseFloat($('#txtCardAmount').val()));
+                $('#txtPaidAmount').val(paidamount);
+                $('#txtChange').val($('#txtPaidAmount').val() - $('#txtNetTotal').val());
+
+                //alert($('#txtNetAmount').val());
+            });
+        })
+
+
+
+    </script>
+    <script type="text/javascript">
+
+        function OpenProductSearchWindow() {
+
+            var url = "Search.aspx";
+
+            var var2;
+            var width = screen.availWidth - 200;
+            var height = screen.availHeight - 200;
+            var left = parseInt((screen.availWidth / 2) - (width / 2));
+            var top = parseInt((screen.availHeight / 2) - (height / 2));
+            var windowFeatures = "width=" + width + ", height=" + height + ", status, resizable, screenX=" + left + ", screenY=" + top;
+
+            //var NWin = window.open("PopUpHelper.aspx?txtBox='"+test+"'&var1="+test+"&var2="+test,'_blank', windowFeatures);
+            //var NWin = window.open("Menu.aspx", windowFeatures);
+            //alert(windowFeatures);
+            //newwindow = window.open('Menu.aspx', 'name', 'height=' + height + ', width=' + width + ', left=' + left + ', top=' + top + ', resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+            //newwindow = window.open(pagename, '_blank', ' resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+
+            newwindow = window.open(url, '_blank', 'height=' + height + ', width=' + width + ', left=' + left + ', top=' + top + ', resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+            newwindow.focus();
+
+        }
+
+    </script>
+    <script type="text/javascript" language="javascript">
+
+        $(document).ready(function () {
+            /////////////////////////////////////////////
+            $('input.enterastab, select.enterastab, textarea.enterastab').live('keydown', function (e) {
+                if (e.keyCode == 13) {
+                    var focusable = $('input,a,select,button,textarea').filter(':visible');
+                    focusable.eq(focusable.index(this) + 1).focus();
+                    return false;
+                }
+            });
+            // adding same class 'enterastab' to all input element to act enter as tab
+            $(':input[type=text],:checkbox,:radio,select').addClass('enterastab');
+
+            //$(':input[id^="txt"]:not([id="txtRecoveryDue"])').addClass('enterastab');
+
+            //$(':input[id^="txt"]:not([id="txtRecoveryDue"])').addClass('currency'); 
+
+            //$(':checkbox,:radio,select').addClass('enterastab'); 
+
+
+            $("#txtCusID").keydown(function (event) {
+                if (event.keyCode == 13) {
+                    $('#txtCusName').focus();
+                }
+            });
+
+
+
+        })
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("#ContentPlaceHolder1_ddlMedicine").change(function () {
+
+                //alert('fffffff');
+
+
+                var selectedText = $(this).find("option:selected").text();
+                var selectedValue = $(this).val();
+                //alert("Selected Text: " + selectedText + " Value: " + selectedValue);
+
+                //var res = selectedText.split("//");
+                var res = selectedText.split("~");
+
+                //alert(res[0]);
+                //alert(res[1]);
+
+                document.getElementById("ContentPlaceHolder1_txtUnitPrice").value = res[3];
+                //document.getElementById("intro").value = res[2];
+
+
+                $("#ContentPlaceHolder1_txtQuantity").focus();
+
+            });
+
+            $("#ContentPlaceHolder1_ddlDiscountCode").change(function () {
+                var selectedText = $(this).find("option:selected").text();
+                var selectedValue = $(this).val();
+
+                var totprice = document.getElementById("ContentPlaceHolder1_txtTotalPrice").value
+
+                //alert(selectedValue);
+                if (selectedValue == "0") {
+                    document.getElementById("ContentPlaceHolder1_txtDiscount").value = 0.00;
+                    document.getElementById("ContentPlaceHolder1_txtNetAmount").value = parseFloat(totprice);
+
+                } else {
+
+                    var discount = totprice * (parseInt(selectedValue) / 100);
+                    //discount = discount.toFixed(0);
+
+                    discount = Math.floor(discount);
+                    document.getElementById("ContentPlaceHolder1_txtDiscount").value = parseFloat(discount);
+                    document.getElementById("ContentPlaceHolder1_txtNetAmount").value = parseFloat(totprice) - parseFloat(discount);
+                }
+
+            });
+        });
+    </script>
+    <script type="text/javascript">
+
+        $(function () {
+            //alert('fffffffffff');
+        }); 
+
+    </script>
+    <script type="text/javascript">
+        function Validate() {
+
+            var error = "";
+
+            var v_cash_amt = parseFloat(document.getElementById("ContentPlaceHolder1_txtCashAmount").value);
+            var v_MFS_amt = parseFloat(document.getElementById("ContentPlaceHolder1_txtMFSAmount").value);
+            var v_card_amt = parseFloat(document.getElementById("ContentPlaceHolder1_txtCardAmount").value);
+
+
+
+            var PaidAmount = document.getElementById("ContentPlaceHolder1_txtPaidAmount").value
+            if (PaidAmount == "" || PaidAmount == "0" || PaidAmount == "0.00") {
+                document.getElementById("ContentPlaceHolder1_txtPaidAmount").style.background = "red"
+                error = error + "Invalid Paid Amount\n";
+                //alert('Error : Invalid Paid Amount');
+                //return false;
+            }
+
+            if ((v_cash_amt + v_MFS_amt + v_card_amt) != parseFloat(PaidAmount)) {
+                error = error + "Cash Amount+MFS Amount+Card Amount <> Paid Amount\n";
+            }
+
+            if (error != "") {
+                error = "Following error occurred\n" + error;
+                alert(error);
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+        function Check() {
+
+            var InvoiceNO = document.getElementById("ContentPlaceHolder1_txtInvoiceNO").value;
+
+            if (InvoiceNO == "") {
+                alert('Invoice NO Can Not Be Blank');
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+    </script>
+    <script type="text/javascript">
+
+
+        function OpenWinPrint(InvoiceNO) {
+
+            var url = "StockInInvoiceView.aspx?InvNO=" + InvoiceNO;
+
+            var var2;
+            var width = screen.availWidth - 200;
+            var height = screen.availHeight - 200;
+            var left = parseInt((screen.availWidth / 2) - (width / 2));
+            var top = parseInt((screen.availHeight / 2) - (height / 2));
+            var windowFeatures = "width=" + width + ", height=" + height + ", status, resizable, screenX=" + left + ", screenY=" + top;
+
+            //var NWin = window.open("PopUpHelper.aspx?txtBox='"+test+"'&var1="+test+"&var2="+test,'_blank', windowFeatures);
+            //var NWin = window.open("Menu.aspx", windowFeatures);
+            //alert(windowFeatures);
+            //newwindow = window.open('Menu.aspx', 'name', 'height=' + height + ', width=' + width + ', left=' + left + ', top=' + top + ', resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+            //newwindow = window.open(pagename, '_blank', ' resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+
+            newwindow = window.open(url, '_blank', 'height=' + height + ', width=' + width + ', left=' + left + ', top=' + top + ', resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+            newwindow.focus();
+
+        }
+
+        function OpenWin(InvoiceNO) {
+
+            var url = "CustomerInvoiceView.aspx?InvNO=" + InvoiceNO;
+
+            var var2;
+            var width = screen.availWidth - 200;
+            var height = screen.availHeight - 200;
+            var left = parseInt((screen.availWidth / 2) - (width / 2));
+            var top = parseInt((screen.availHeight / 2) - (height / 2));
+            var windowFeatures = "width=" + width + ", height=" + height + ", status, resizable, screenX=" + left + ", screenY=" + top;
+
+            //var NWin = window.open("PopUpHelper.aspx?txtBox='"+test+"'&var1="+test+"&var2="+test,'_blank', windowFeatures);
+            //var NWin = window.open("Menu.aspx", windowFeatures);
+            //alert(windowFeatures);
+            //newwindow = window.open('Menu.aspx', 'name', 'height=' + height + ', width=' + width + ', left=' + left + ', top=' + top + ', resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+            //newwindow = window.open(pagename, '_blank', ' resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+
+            newwindow = window.open(url, '_blank', 'height=' + height + ', width=' + width + ', left=' + left + ', top=' + top + ', resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+            newwindow.focus();
+
+        }
+
+        function OpenWin2(InvoiceNO) {
+
+            var url = "Sell_2V2.aspx?v=" + InvoiceNO;
+
+
+
+            var var2;
+            var width = screen.availWidth - 50;
+            var height = screen.availHeight - 50;
+            var left = parseInt((screen.availWidth / 2) - (width / 2));
+            var top = parseInt((screen.availHeight / 2) - (height / 2));
+            var windowFeatures = "width=" + width + ", height=" + height + ", status, resizable, screenX=" + left + ", screenY=" + top;
+
+            //var NWin = window.open("PopUpHelper.aspx?txtBox='"+test+"'&var1="+test+"&var2="+test,'_blank', windowFeatures);
+            //var NWin = window.open("Menu.aspx", windowFeatures);
+            //alert(windowFeatures);
+            //newwindow = window.open('Menu.aspx', 'name', 'height=' + height + ', width=' + width + ', left=' + left + ', top=' + top + ', resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+            //newwindow = window.open(pagename, '_blank', ' resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+
+            newwindow = window.open(url, '_blank', 'height=' + height + ', width=' + width + ', left=' + left + ', top=' + top + ', resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+            newwindow.focus();
+        }
+    
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("#ContentPlaceHolder1_GridView1").DataTable();
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $(".date").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                showButtonPanel: true,
+                dateFormat: 'yy-mm-dd'
+                /*,
+                onClose: function (dateText, inst) {
+                var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+                var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+                $(this).datepicker('setDate', new Date(year, month, 1));
+                }*/
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+
+
+            $("#ContentPlaceHolder1_txtUnitPrice").keyup(function () {
+                $('#ContentPlaceHolder1_txtTotalBuyPrice').val($('#ContentPlaceHolder1_txtTotalPcs').val() * $('#ContentPlaceHolder1_txtUnitPrice').val());
+                //$('#txtNetAmount').val($('#txtTotalBuyPrice').val() - $('#txtDiscount').val());
+            });
+
+            /*
+            $("#txtTotalPcs").keyup(function () {
+            $('#txtTotalBuyPrice').val($('#txtTotalPcs').val() * $('#txtUnitPrice').val());
+            //$('#txtNetAmount').val($('#txtTotalBuyPrice').val() - $('#txtDiscount').val());
+            });
+            */
+            $("#ContentPlaceHolder1_txtTotalBuyPrice").keyup(function () {
+
+                if ($('#ContentPlaceHolder1_txtTotalPcs').val() != "") {
+                    var v = $('#ContentPlaceHolder1_txtTotalBuyPrice').val() / $('#ContentPlaceHolder1_txtTotalPcs').val();
+                    $('#ContentPlaceHolder1_txtUnitPrice').val(v.toFixed(2));
+                    //$('#txtNetAmount').val($('#txtTotalBuyPrice').val() - $('#txtDiscount').val());
+                }
+            });
+
+
+            $("#ContentPlaceHolder1_txtSellPrice").keyup(function () {
+                var sellprice = $('#ContentPlaceHolder1_txtSellPrice').val() * $('#ContentPlaceHolder1_txtTotalPcs').val();
+                //$('#txtTotalSellPrice').val($('#txtSellPrice').val() * $('#txtTotalPcs').val());
+                $('#ContentPlaceHolder1_txtTotalSellPrice').val(sellprice.toFixed(2));
+            });
+
+
+            $("#ContentPlaceHolder1_txtTotalSellPrice").keyup(function () {
+                var count = $('#ContentPlaceHolder1_txtTotalPcs').val();
+                var unit_sell_price = parseFloat($('#ContentPlaceHolder1_txtTotalSellPrice').val()) / count;
+                //$('#txtTotalSellPrice').val($('#txtSellPrice').val() * $('#txtTotalPcs').val());
+                $('#ContentPlaceHolder1_txtSellPrice').val(unit_sell_price.toFixed(2));
+            });
+
+
+
+            $("#ContentPlaceHolder1_txtSpecialDiscount").keyup(function () {
+                var factor = parseFloat($('#ContentPlaceHolder1_txtSpecialDiscount').val()) / parseFloat($('#ContentPlaceHolder1_txtTotalTP').val());
+                //$('#txtTotalSellPrice').val($('#txtSellPrice').val() * $('#txtTotalPcs').val());
+                $('#ContentPlaceHolder1_txtBuyPriceFactor').val(factor.toFixed(3));
+            });
+
+
+
+            $("#ContentPlaceHolder1_txtVAT").keyup(function () {
+                //var vat = $('#txtTP').val() * .175;
+                //$('#txtTotalSellPrice').val($('#txtSellPrice').val() * $('#txtTotalPcs').val());
+                //$('#txtVAT').val(vat.toFixed(2));
+
+                var count = $('#ContentPlaceHolder1_txtTotalPcs').val();
+                var f = $('#ContentPlaceHolder1_txtBuyPriceFactor').val();
+
+                var tot_price = parseFloat($('#ContentPlaceHolder1_txtTP').val()); // +parseFloat($('#txtVAT').val());
+
+                var net_price = tot_price * (1 - f);
+                var unit_price = (parseFloat(net_price) + parseFloat($('#ContentPlaceHolder1_txtVAT').val())) / count;
+
+
+                var tot_price_with_vat = parseFloat(net_price) + parseFloat($('#ContentPlaceHolder1_txtVAT').val());
+
+                $('#ContentPlaceHolder1_txtUnitPrice').val(unit_price.toFixed(2));
+
+                $('#ContentPlaceHolder1_txtTotalBuyPrice').val(tot_price_with_vat.toFixed(2));
+
+            });
+
+
+
+            /*
+            $("#txtTotalDiscount").keyup(function () {
+            $('#txtNetTotal').val($('#txtInvoiceAmount').val() - $('#txtTotalDiscount').val());
+            });
+
+            $("#txtPaidAmount").keyup(function () {
+            $('#txtChange').val($('#txtPaidAmount').val() - $('#txtNetTotal').val());
+
+            //alert($('#txtNetAmount').val());
+            });
+            */
+        });
+
+
+        function Check_STOCKInput() {
+
+            var buyprice = document.getElementById("ContentPlaceHolder1_txtUnitPrice").value;
+            var sellprice = document.getElementById("ContentPlaceHolder1_txtSellPrice").value;
+            if (parseFloat(sellprice) < parseFloat(buyprice)) {
+                alert('Sell Price Can Not Be Less Than Buy Price');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+    <script type="text/javascript" language="javascript">
+
+
+
+
+        function OpenWin(ProductCode) {
+
+
+            //alert(ProductCode);
+            var url = "SetSellPrice.aspx?ProductCode=" + ProductCode;
+
+            var var2;
+            var width = screen.availWidth - 200;
+            var height = screen.availHeight - 200;
+            var left = parseInt((screen.availWidth / 2) - (width / 2));
+            var top = parseInt((screen.availHeight / 2) - (height / 2));
+            var windowFeatures = "width=" + width + ", height=" + height + ", status, resizable, screenX=" + left + ", screenY=" + top;
+
+            //var NWin = window.open("PopUpHelper.aspx?txtBox='"+test+"'&var1="+test+"&var2="+test,'_blank', windowFeatures);
+            //var NWin = window.open("Menu.aspx", windowFeatures);
+            //alert(windowFeatures);
+            //newwindow = window.open('Menu.aspx', 'name', 'height=' + height + ', width=' + width + ', left=' + left + ', top=' + top + ', resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+            //newwindow = window.open(pagename, '_blank', ' resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+
+            newwindow = window.open(url, '_blank', 'height=' + height + ', width=' + width + ', left=' + left + ', top=' + top + ', resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+            newwindow.focus();
+
+        }
+
+        function OpenWinSell2(InvoiceNO) {
+
+            var url = "Sell_2V2.aspx?v=" + InvoiceNO;
+
+
+
+            var var2;
+            var width = screen.availWidth - 50;
+            var height = screen.availHeight - 50;
+            var left = parseInt((screen.availWidth / 2) - (width / 2));
+            var top = parseInt((screen.availHeight / 2) - (height / 2));
+            var windowFeatures = "width=" + width + ", height=" + height + ", status, resizable, screenX=" + left + ", screenY=" + top;
+
+            //var NWin = window.open("PopUpHelper.aspx?txtBox='"+test+"'&var1="+test+"&var2="+test,'_blank', windowFeatures);
+            //var NWin = window.open("Menu.aspx", windowFeatures);
+            //alert(windowFeatures);
+            //newwindow = window.open('Menu.aspx', 'name', 'height=' + height + ', width=' + width + ', left=' + left + ', top=' + top + ', resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+            //newwindow = window.open(pagename, '_blank', ' resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+
+            newwindow = window.open(url, '_blank', 'height=' + height + ', width=' + width + ', left=' + left + ', top=' + top + ', resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+            newwindow.focus();
+        }
+
+        function OpenWinOpenInvoice(InvoiceNO) {
+
+            var url = "CustomerInvoiceView.aspx?InvNO=" + InvoiceNO;
+
+            var var2;
+            var width = screen.availWidth - 200;
+            var height = screen.availHeight - 200;
+            var left = parseInt((screen.availWidth / 2) - (width / 2));
+            var top = parseInt((screen.availHeight / 2) - (height / 2));
+            var windowFeatures = "width=" + width + ", height=" + height + ", status, resizable, screenX=" + left + ", screenY=" + top;
+
+            //var NWin = window.open("PopUpHelper.aspx?txtBox='"+test+"'&var1="+test+"&var2="+test,'_blank', windowFeatures);
+            //var NWin = window.open("Menu.aspx", windowFeatures);
+            //alert(windowFeatures);
+            //newwindow = window.open('Menu.aspx', 'name', 'height=' + height + ', width=' + width + ', left=' + left + ', top=' + top + ', resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+            //newwindow = window.open(pagename, '_blank', ' resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+
+            newwindow = window.open(url, '_blank', 'height=' + height + ', width=' + width + ', left=' + left + ', top=' + top + ', resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+            newwindow.focus();
+
+        }
+
+        function OpenWin2(ProductCode) {
+
+            var url = "InOutHistory.aspx?v=" + ProductCode;
+
+
+
+            var var2;
+            var width = screen.availWidth - 50;
+            var height = screen.availHeight - 50;
+            var left = parseInt((screen.availWidth / 2) - (width / 2));
+            var top = parseInt((screen.availHeight / 2) - (height / 2));
+            var windowFeatures = "width=" + width + ", height=" + height + ", status, resizable, screenX=" + left + ", screenY=" + top;
+
+            //var NWin = window.open("PopUpHelper.aspx?txtBox='"+test+"'&var1="+test+"&var2="+test,'_blank', windowFeatures);
+            //var NWin = window.open("Menu.aspx", windowFeatures);
+            //alert(windowFeatures);
+            //newwindow = window.open('Menu.aspx', 'name', 'height=' + height + ', width=' + width + ', left=' + left + ', top=' + top + ', resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+            //newwindow = window.open(pagename, '_blank', ' resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+
+            newwindow = window.open(url, '_blank', 'height=' + height + ', width=' + width + ', left=' + left + ', top=' + top + ', resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+            newwindow.focus();
+        }
+
+
+        function OpenWinStockInvoice(InvoiceNO) {
+
+            var url = "StockInInvoiceDetailV2.aspx?InvNO=" + InvoiceNO;
+
+            var var2;
+            var width = screen.availWidth - 200;
+            var height = screen.availHeight - 200;
+            var left = parseInt((screen.availWidth / 2) - (width / 2));
+            var top = parseInt((screen.availHeight / 2) - (height / 2));
+            var windowFeatures = "width=" + width + ", height=" + height + ", status, resizable, screenX=" + left + ", screenY=" + top;
+
+            //var NWin = window.open("PopUpHelper.aspx?txtBox='"+test+"'&var1="+test+"&var2="+test,'_blank', windowFeatures);
+            //var NWin = window.open("Menu.aspx", windowFeatures);
+            //alert(windowFeatures);
+            //newwindow = window.open('Menu.aspx', 'name', 'height=' + height + ', width=' + width + ', left=' + left + ', top=' + top + ', resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+            //newwindow = window.open(pagename, '_blank', ' resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+
+            newwindow = window.open(url, '_blank', 'height=' + height + ', width=' + width + ', left=' + left + ', top=' + top + ', resizable=yes, scrollbars=yes, toolbar=no, status=yes, menubar=no');
+
+            newwindow.focus();
+
+        }
+
+    </script>
+</body>
+</html>
